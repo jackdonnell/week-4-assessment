@@ -7,13 +7,13 @@ app.use(cors())
 
 app.use(express.json())
 
-const { getCompliment, getFortune } = require('./controller')
+const { getCompliment, getFortune, postGrade } = require('./controller')
 
 app.get("/api/compliment", getCompliment)
 app.get('/api/fortune', getFortune)
-// app.post("/api/postInput", postGrade)
-// app.put("/api/", changeGrade)
-// app.delete("/api/grade", deleteGrade)
+app.post("/api/postInput", postGrade)
+// app.put("/api/grade/:id", changeGrade)
+// app.delete("/api/grade/:id", deleteGrade)
 
 
 
@@ -37,4 +37,4 @@ app.get('/api/fortune', getFortune)
 // app.delete('/api/grade/:id', deleteGrade)
 
 
-app.listen(4000, () => console.log("Server running on 4000"))
+app.listen(4001, () => console.log("Server running on 4001"))
