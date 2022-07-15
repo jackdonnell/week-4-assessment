@@ -1,4 +1,4 @@
-const gradesArr = []
+let gradeStr = ''
 module.exports = {
     getCompliment: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
@@ -26,14 +26,15 @@ module.exports = {
     postGrade: (req, res) => {
         console.log('endpoint hit')
         console.log(req.body)
-        gradesArr.push(req.body.grade)
-        res.status(200).send(gradesArr)
+        gradeStr = (req.body.grade)
+        res.status(200).send(gradeStr)
     },
+    changeGrade: (req, res) => {
+        console.log('endpoint hit')
+        console.log(req.params)
+        console.log(req.body)
+        gradeStr = req.body.changedGrade
+        res.status(200).send(gradeStr)
+    }
 
-
-    //     updateHouse: (req, res) => {
-        //         const existingId = +req.params.id
-        //         let index = grade.findIndex(grades => grade.id === existingId)
-        //         res.status(200).send(houses)
-        //     }
     }

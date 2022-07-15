@@ -7,34 +7,12 @@ app.use(cors())
 
 app.use(express.json())
 
-const { getCompliment, getFortune, postGrade } = require('./controller')
+const { getCompliment, getFortune, postGrade, changeGrade } = require('./controller')
 
 app.get("/api/compliment", getCompliment)
 app.get('/api/fortune', getFortune)
 app.post("/api/postInput", postGrade)
-// app.put("/api/grade/:id", changeGrade)
+app.put("/api/putInput", changeGrade)
 // app.delete("/api/grade/:id", deleteGrade)
-
-
-
-
-
-// const express = require('express')
-// const cors = require('cors')
-
-// const app = express()
-
-// app.use(express.json())
-// app.use(cors())
-
-// const {getCompliment, getFortune} = require('./controller')
-// // const {getCompliment, getFortune, postGrade, changeGrade, deleteGrade} = require('./controller')
-
-// app.get('/api/compliment', getCompliment)
-// app.get('/api/fortune', getFortune)
-// app.post('/api', postGrade)
-// app.put('/api/grade/:id', changeGrade)
-// app.delete('/api/grade/:id', deleteGrade)
-
 
 app.listen(4001, () => console.log("Server running on 4001"))
