@@ -12,7 +12,7 @@ const { getCompliment, getFortune, postGrade, changeGrade } = require('./control
 app.get("/api/compliment", getCompliment)
 app.get('/api/fortune', getFortune)
 app.post("/api/postInput", postGrade)
-app.put("/api/putInput", changeGrade)
-// app.delete("/api/grade/:id", deleteGrade)
+app.put("/api/putInput/:id", changeGrade)
+app.delete("/api/grade/:id", deleteGrade)
 
 app.listen(4001, () => console.log("Server running on 4001"))
