@@ -31,11 +31,11 @@ module.exports = {
         gradeStr = req.body.changedGrade
         res.status(200).send(gradeStr)
     },
-        deleteGrade: (req, res) => {
-            const existingId = +req.params.id
-            let index = grade.findIndex(grades => grade.id === existingId)
-            grade.splice(index, 1)
-            res.status(200).send(grade)
-        },
-    
+    deleteGrade: (req, res) => {
+        console.log('endpoint hit')
+        console.log(req.params)
+        console.log(req.body)
+        gradeStr = req.body.deleteGrade
+        res.status(200).send(gradeStr)
+    }
 }

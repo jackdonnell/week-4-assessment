@@ -5,7 +5,6 @@ const postButton = document.getElementById("postButton")
 const putInput = document.getElementById("putInput")
 const putButton = document.getElementById("putButton")
 const deleteButton = document.getElementById("deleteButton")
-// const deleteInput = document.getElementById("deleteInput")
 
 const getCompliment = () => {
     axios.get("http://localhost:4001/api/compliment/")
@@ -44,6 +43,16 @@ const changeGrade = () => {
     })
 }
 
+const deleteGrade = () => {
+    const deletegradeBody = {
+        deletedGrade: putInput.value
+    }
+
+    axios.delete(`http://localhost:4001/api/putInput/${putInput.value}`, deletegradeBody)
+    .then((res) => {
+        alert('Your grade has been deleted')
+    })
+}
 
 
 complimentBtn.addEventListener('click', getCompliment)
